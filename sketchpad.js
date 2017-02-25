@@ -14,24 +14,63 @@ function clearGrid(){
 
 function refreshGrid(){
     var choice = prompt("What grid size would you like? (Enter a value between 2 and 64)");
-    clearGrid();
-    createGrid(choice);
+    	if (choice >= 2 && choice <= 64) {
+    		clearGrid();
+    		createGrid(choice);
+    	} else {
+    		alert("Please enter a valid number.")
+    	}
+};
+
+function normal(){
+	$(".unit").hover(function() {
+        $(this).css('background-color', 'black');
+        });
+};
+
+function reset(){
+    refreshGrid();
+    $(".unit").hover(function() {
+        $(this).css('background-color', 'black');
+    });
+};
+
+function random (){
+	$(".unit").hover(function() {
+    	red = Math.floor((Math.random() * 256) + 1);
+		blue = Math.floor((Math.random() * 256) + 1);
+		green = Math.floor((Math.random() * 256) + 1);
+			$(this).css({"background-color": "rgb("+red+", "+green+", "+blue+")"});
+	});
+};
+
+function opacity() {
+    $(".unit").hover(function(){
+    	for (var opa = 0; opa < 1; opa =+ 0.1) {
+    		$(this).css("opacity", opa);
+    		opa = opa +0.1;
+    	}
+	});
 };
 
 
 $(document).ready(function() {
     createGrid(16);
-
-	$(".unit").hover(function() {
-        $(this).css('background-color', 'black');
-        });
+    normal();
 
     $('#reset').click(function() {
     	refreshGrid();
-    	$(".unit").hover(function() {
-        	$(this).css('background-color', 'black');
-        });
+    	normal();
     });
+
+    $('#randomColor').click(function() {
+    	refreshGrid();
+    	random();
+    });
+    
+    $('#fadeToBlack').click(function(){
+    	refreshGrid();
+    	opacity();
+    });
+
 });
-
-
