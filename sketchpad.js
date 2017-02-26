@@ -10,8 +10,8 @@ function createGrid(x) {
 
 function clearGrid(){
     $(".unit").remove();
-	$(".unit").css("background", "#729f98");
-	$(".unit").css("opacity", 1);
+	  $(".unit").css("background", "#729f98");
+	  $(".unit").css("opacity", 1);
 };
 
 function refreshGrid(){
