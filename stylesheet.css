@@ -1,0 +1,26 @@
+.buttons {
+	margin: 15px auto;
+	text-align: center;
+	display: block;
+}
+
+#container {
+	position: relative;
+	font-size: 0;
+	width: 960px;
+	height: 960px;
+	padding: 0;
+	margin: auto;
+	outline: 2px solid #000;
+	border: none;
+	background-color: #000;
+}
+
+.unit {
+	margin: 0;
+	padding: 0;
+	outline: 1px solid #000;
+	border: none;
+	display: inline-block;
+	background: #729f98;
+}
