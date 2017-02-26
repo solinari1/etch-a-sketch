@@ -10,6 +10,8 @@ function createGrid(x) {
 
 function clearGrid(){
     $(".unit").remove();
+	  $(".unit").css("background", "#729f98");
+	  $(".unit").css("opacity", 1);
 };
 
 function refreshGrid(){
@@ -45,13 +47,13 @@ function random (){
 };
 
 function opacity() {
-    $(".unit").hover(function(){
-    	for (var opa = 0; opa < 1; opa =+ 0.1) {
-    		$(this).css("opacity", opa);
-    		opa = opa +0.1;
-    	}
+	$(".unit").hover(function() {
+		var opacity = $(this).css("opacity");
+		if(opacity !== 0) {
+			$(this).css("opacity", opacity - 0.1);
+		}
 	});
-};
+}
 
 
 $(document).ready(function() {
